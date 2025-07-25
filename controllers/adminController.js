@@ -159,4 +159,16 @@ exports.hapusPenimbangan = (req, res) => {
   });
 };
 
+// DELETE /api/admin/rekapan/clear
+exports.clearDisetujui = (req, res) => {
+  const sql = `DELETE FROM penimbangan WHERE status_validasi = 'disetujui'`;
+  db.query(sql, (err) => {
+    if (err) {
+      console.error('❌ Gagal hapus data disetujui:', err);
+      return res.status(500).json({ message: 'Gagal hapus data disetujui' });
+    }
+    res.json({ message: 'Data yang disetujui berhasil dihapus' });
+  });
+};
+
 

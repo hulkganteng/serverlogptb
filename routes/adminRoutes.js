@@ -12,7 +12,7 @@ router.get('/laporan', verifyToken, adminController.getLaporanMingguan);
 router.patch('/rekapan/:id/accept', verifyToken, adminController.acceptRekapan);
 router.patch('/rekapan/:id/reject', verifyToken, adminController.rejectRekapan);
 router.patch('/rekapan/:id', verifyToken, adminController.updateRekapan);
-router.delete('/rekapan/:id', verifyToken, adminController.deleteRekapan);
+router.delete('/rekapan/clear', adminController.clearDisetujui);
 
 
 
